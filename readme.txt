@@ -12,7 +12,7 @@ One shortcode to embedding facebook posts easily, responsive and custom margin b
 
 == Description ==
 
-### Facebook Post Embed  
+### Facebook Post Embed
 
 One shortcode to embedding facebook posts easily, responsive and custom margin bottom.
 
