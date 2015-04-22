@@ -24,7 +24,7 @@ One shortcode to embedding facebook posts easily, responsive and custom margin b
 
 ### Shortcode To Widget
 
-* Want facebook post embed widget? try [Shortcode To Widget](https://wordpress.org/plugins/shortcode-to-widget/) plugin.
+* Want facebook post embed widget? try [Shortcode To Widget](http://wp-time.com/shortcode-to-widget/) plugin.
 
 ### Live Demo
 
