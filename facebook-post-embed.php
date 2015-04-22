@@ -3,7 +3,7 @@
 Plugin Name: Facebook Post Embed
 Plugin URI: http://wp-time.com/facebook-post-embed/
 Description: One shortcode to embedding facebook posts easily, responsive and custom margin bottom.
-Version: 1.0
+Version: 1.1
 Author: Qassim Hassan
 Author URI: http://qass.im
 License: GPLv2 or later
@@ -97,20 +97,27 @@ add_action('wp_footer', 'WPTime_facebook_post_embed_script');
 
 
 // Add [fb_pe url="" bottom=""] shortcode
-function WPTime_facebook_post_embed_shortcode($atts){
-	if( !empty( $atts['url'] ) ){
-		$url = $atts['url'];
-	}else{
-		$url = 'https://www.facebook.com/FacebookDevelopers/posts/10152128760693553';
+function WPTime_facebook_post_embed_shortcode( $atts, $content = null ){
+
+	extract(
+		shortcode_atts(
+			array(
+				"url"		=>	'https://www.facebook.com/FacebookDevelopers/posts/10152128760693553',
+				"bottom" 	=>	'30'
+			),$atts
+		)
+	);
+
+	if( empty($bottom) or $bottom == '0' ){
+		$style = ' style="margin-bottom:0px;"';
 	}
-	
-	if( !empty( $atts['bottom'] ) ){
-		$style = ' style="margin-bottom:'.$atts['bottom'].'px;"';
-	}else{
-		$style = ' style="margin-bottom:30px;"';
+
+	else{
+		$style = ' style="margin-bottom:'.$bottom.'px;"';
 	}
 	
 	return '<div class="fb-post wptime-fb-post-embed" data-href="'.$url.'"'.$style.'></div>';
+	
 }
 add_shortcode("fb_pe", "WPTime_facebook_post_embed_shortcode");
 
