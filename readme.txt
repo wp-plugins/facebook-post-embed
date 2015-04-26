@@ -4,7 +4,7 @@ Donate link: http://j.mp/WPTime_donations
 Tags: facebook, facebook embed, facebook post, responsive, embed, embedding, custom, customizer, customize, image, images, shortcode, Post, plugin, posts, page, widget, admin, sidebar, google, twitter, comments
 Requires at least: 2.5.0
 Tested up to: 4.2
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ One shortcode to embedding facebook posts easily, responsive and custom margin b
 * [Or ask me on twitter.](https://twitter.com/Qassim_Dev)
 
 == Changelog ==
+
+= 1.3 =
+* Important! Please update the plugin.
 
 = 1.2 =
 * Remove WP Time Ads.

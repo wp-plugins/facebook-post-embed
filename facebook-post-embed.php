@@ -3,7 +3,7 @@
 Plugin Name: Facebook Post Embed
 Plugin URI: http://wp-time.com/facebook-post-embed/
 Description: One shortcode to embedding facebook posts easily, responsive and custom margin bottom.
-Version: 1.2
+Version: 1.3
 Author: Qassim Hassan
 Author URI: http://qass.im
 License: GPLv2 or later
@@ -27,82 +27,87 @@ License: GPLv2 or later
 
 
 // WP Time Menu
-function WPTime_Add_Admin_Bar_Menu_Aff() {
+if( !function_exists('WPTime_Add_Admin_Bar_Menu_Aff') ) {
 
-	global $wp_admin_bar;
+	function WPTime_Add_Admin_Bar_Menu_Aff() {
 
-	$wp_admin_bar->add_menu(
-		array(
-			'id' 		=> 		'wptime-aff-menu-parent',
-			'parent'	=>		0,
-			'title' 	=> 		'WP Time',
-			'href' 		=> 		'http://wp-time.com',
-			'meta'		=>		array('target' => '_blank')
-		)
-	);
+		global $wp_admin_bar;
+
+		$wp_admin_bar->add_menu(
+			array(
+				'id' 		=> 		'wptime-aff-menu-parent',
+				'parent'	=>		0,
+				'title' 	=> 		'WP Time',
+				'href' 		=> 		'http://wp-time.com',
+				'meta'		=>		array('target' => '_blank')
+			)
+		);
 		
-	$wp_admin_bar->add_menu(
-		array(
-			'id' 		=> 		'wptime-aff-menu-et',
-			'parent'	=>		'wptime-aff-menu-parent',
-			'title' 	=> 		'Collection Of 87 WP Themes For $69 Only',
-			'href' 		=> 		'http://j.mp/ET_WPTime_ref_pl',
-			'meta'		=>		array('target' => '_blank')
-		)
-	);
+		$wp_admin_bar->add_menu(
+			array(
+				'id' 		=> 		'wptime-aff-menu-et',
+				'parent'	=>		'wptime-aff-menu-parent',
+				'title' 	=> 		'Collection Of 87 WP Themes For $69 Only',
+				'href' 		=> 		'http://j.mp/ET_WPTime_ref_pl',
+				'meta'		=>		array('target' => '_blank')
+			)
+		);
 
-	$wp_admin_bar->add_menu(
-		array(
-			'id' 		=> 		'wptime-aff-menu-cm',
-			'parent'	=>		'wptime-aff-menu-parent',
-			'title' 	=> 		'WP Themes On Creative Market',
-			'href' 		=> 		'http://j.mp/CM_WPTime',
-			'meta'		=>		array('target' => '_blank')
-		)
-	);
+		$wp_admin_bar->add_menu(
+			array(
+				'id' 		=> 		'wptime-aff-menu-cm',
+				'parent'	=>		'wptime-aff-menu-parent',
+				'title' 	=> 		'WP Themes On Creative Market',
+				'href' 		=> 		'http://j.mp/CM_WPTime',
+				'meta'		=>		array('target' => '_blank')
+			)
+		);
 
-	$wp_admin_bar->add_menu(
-		array(
-			'id' 		=> 		'wptime-aff-menu-tf',
-			'parent'	=>		'wptime-aff-menu-parent',
-			'title' 	=> 		'WP Themes On Themeforest',
-			'href' 		=> 		'http://j.mp/TF_WPTime',
-			'meta'		=>		array('target' => '_blank')
-		)
-	);
+		$wp_admin_bar->add_menu(
+			array(
+				'id' 		=> 		'wptime-aff-menu-tf',
+				'parent'	=>		'wptime-aff-menu-parent',
+				'title' 	=> 		'WP Themes On Themeforest',
+				'href' 		=> 		'http://j.mp/TF_WPTime',
+				'meta'		=>		array('target' => '_blank')
+			)
+		);
 	
-	$wp_admin_bar->add_menu(
-		array(
-			'id' 		=> 		'wptime-aff-menu-cc',
-			'parent'	=>		'wptime-aff-menu-parent',
-			'title' 	=> 		'WP Plugins On Codecanyon',
-			'href' 		=> 		'http://j.mp/CC_WPTime',
-			'meta'		=>		array('target' => '_blank')
-		)
-	);
+		$wp_admin_bar->add_menu(
+			array(
+				'id' 		=> 		'wptime-aff-menu-cc',
+				'parent'	=>		'wptime-aff-menu-parent',
+				'title' 	=> 		'WP Plugins On Codecanyon',
+				'href' 		=> 		'http://j.mp/CC_WPTime',
+				'meta'		=>		array('target' => '_blank')
+			)
+		);
 
-	$wp_admin_bar->add_menu(
-		array(
-			'id' 		=> 		'wptime-aff-menu-bh',
-			'parent'	=>		'wptime-aff-menu-parent',
-			'title' 	=> 		'Unlimited Web Hosting For $3.95 Only',
-			'href' 		=> 		'http://j.mp/BH_WPTime',
-			'meta'		=>		array('target' => '_blank')
-		)
-	);
+		$wp_admin_bar->add_menu(
+			array(
+				'id' 		=> 		'wptime-aff-menu-bh',
+				'parent'	=>		'wptime-aff-menu-parent',
+				'title' 	=> 		'Unlimited Web Hosting For $3.95 Only',
+				'href' 		=> 		'http://j.mp/BH_WPTime',
+				'meta'		=>		array('target' => '_blank')
+			)
+		);
 
-	$wp_admin_bar->add_menu(
-		array(
-			'id' 		=> 		'wptime-aff-menu-cas',
-			'parent'	=>		'wptime-aff-menu-parent',
-			'title' 	=> 		'Contact And Support',
-			'href' 		=> 		'http://wp-time.com/contact/',
-			'meta'		=>		array('target' => '_blank')
-		)
-	);
+		$wp_admin_bar->add_menu(
+			array(
+				'id' 		=> 		'wptime-aff-menu-cas',
+				'parent'	=>		'wptime-aff-menu-parent',
+				'title' 	=> 		'Contact And Support',
+				'href' 		=> 		'http://wp-time.com/contact/',
+				'meta'		=>		array('target' => '_blank')
+			)
+		);
+
+	}
+	
+	add_action( 'wp_before_admin_bar_render', 'WPTime_Add_Admin_Bar_Menu_Aff');
 
 }
-add_action( 'wp_before_admin_bar_render', 'WPTime_Add_Admin_Bar_Menu_Aff');
 
 
 // Add responsive style to facebook posts
