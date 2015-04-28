@@ -3,7 +3,7 @@
 Plugin Name: Facebook Post Embed
 Plugin URI: http://wp-time.com/facebook-post-embed/
 Description: One shortcode to embedding facebook posts easily, responsive and custom margin bottom.
-Version: 1.3
+Version: 1.4
 Author: Qassim Hassan
 Author URI: http://qass.im
 License: GPLv2 or later
@@ -100,11 +100,16 @@ function WPTime_facebook_post_embed_shortcode( $atts, $content = null ){
 	extract(
 		shortcode_atts(
 			array(
-				"url"		=>	'https://www.facebook.com/FacebookDevelopers/posts/10152128760693553',
+				"url"		=>	'',
 				"bottom" 	=>	'30'
 			),$atts
 		)
 	);
+
+	if( empty($url) ){
+		return '<p>Please enter facebook post url.</p>';
+		return false;
+	}
 
 	if( empty($bottom) or $bottom == '0' ){
 		$style = ' style="margin-bottom:0px;"';
@@ -118,5 +123,36 @@ function WPTime_facebook_post_embed_shortcode( $atts, $content = null ){
 	
 }
 add_shortcode("fb_pe", "WPTime_facebook_post_embed_shortcode");
+
+
+// Add facebook button to wp editor
+function WPTime_fb_pe_tinymce_button($buttons) {
+	array_push($buttons, 'facebook_post_embed');
+	return $buttons;
+}
+add_filter('mce_buttons', 'WPTime_fb_pe_tinymce_button');
+
+
+// Register js for facebook button
+function WPTime_fb_pe_register_tinymce_js($plugin_array) {
+	$plugin_array['facebook_post_embed'] = plugins_url( '/js/fb_pe_tinymce_button.js', __FILE__);
+	return $plugin_array;
+}
+add_filter('mce_external_plugins', 'WPTime_fb_pe_register_tinymce_js');
+
+
+// Add css icon for facebook button
+function WPTime_fb_pe_button_icon(){
+	?>
+		<style type="text/css">
+			.mce-i-facebook-post-embed-icon:before{
+				font-family: 'dashicons' !important;
+				content: '\f304' !important;
+				font-size: 24px !important;
+			}
+		</style>
+	<?php
+}
+add_action('admin_head','WPTime_fb_pe_button_icon');
 
 ?>
