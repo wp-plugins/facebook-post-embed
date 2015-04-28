@@ -57,6 +57,7 @@ One shortcode to embedding facebook posts easily, responsive and custom margin b
 
 1. Upload 'facebook-post-embed' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. You will find new button in WordPress post/page editor.
 
 ### Shortcode
 * Just use this shortcode to embedding facebook post: [fb_pe url="" bottom=""]
@@ -77,7 +78,7 @@ One shortcode to embedding facebook posts easily, responsive and custom margin b
 == Changelog ==
 
 = 1.4 =
-* Shortcode button added to WordPress Editor [(see screenshot)](http://wp-time.com/facebook-post-embed/).
+* Shortcode button added to WordPress post/page editor [(see screenshot)](http://wp-time.com/facebook-post-embed/).
 
 = 1.3 =
 * Important! Please update the plugin.
