@@ -80,7 +80,7 @@ One shortcode to embedding facebook posts easily, responsive and custom margin b
 == Changelog ==
 
 = 1.5 =
-* [WP Time need your donation.](http://j.mp/Donate_To_WPTime)
+* Support WordPress latest version.
 
 = 1.4 =
 * Shortcode button added to WordPress post/page editor [(see screenshot)](http://wp-time.com/facebook-post-embed/).
