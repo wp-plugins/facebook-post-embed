@@ -3,7 +3,7 @@
 Plugin Name: Facebook Post Embed
 Plugin URI: http://wp-time.com/facebook-post-embed/
 Description: One shortcode to embedding facebook posts easily, responsive and custom margin bottom.
-Version: 1.4
+Version: 1.5
 Author: Qassim Hassan
 Author URI: http://qass.im
 License: GPLv2 or later
